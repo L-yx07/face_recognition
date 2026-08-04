@@ -1,0 +1,35 @@
+%YAML:1.0
+# 人脸检测项目配置（OpenCV FileStorage 格式）
+model:
+  # 级联模型路径；模型文件放在 models/ 目录下
+  path: "models/haarcascade_frontalface_default.xml"
+  # 模型文件名，代码里也可以只读 name 再拼接路径
+  name: "haarcascade_frontalface_default.xml"
+
+detect:
+  # 每次扫描图像时缩小的比例，越大检测越快但可能漏检
+  scale_factor: 1.1
+  # 每个候选框需要保留的邻近矩形数，越大误检越少
+  min_neighbors: 5
+  # 最小人脸尺寸 [宽, 高]
+  min_size: [60, 60]
+  # 最大人脸尺寸 [宽, 高]，0 表示不限
+  max_size: [0, 0]
+
+draw:
+  # 检测框颜色，BGR 格式
+  color: [0, 255, 0]
+  # 检测框线宽
+  thickness: 2
+
+io:
+  # 默认输入图片路径；留空则使用摄像头
+  input: ""
+  # 摄像头索引，0 表示第一个摄像头
+  camera_index: 0
+  # 图片检测结果保存路径；留空则不保存
+  output: ""
+
+preprocess:
+  # 检测前把图片缩放到指定宽度，0 表示不缩放
+  resize_width: 0

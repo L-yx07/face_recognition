@@ -1,0 +1,14 @@
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.o
+*.obj
+*.exe
+*.dll
+.idea/
+.vscode/
+.DS_Store
+outputs/
+!outputs/.gitkeep
