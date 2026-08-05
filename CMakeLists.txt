@@ -13,8 +13,9 @@ set(OpenCV_DIR "E:/OpenCV/OpenCV-MinGW-Build-OpenCV-4.1.0-x64")
 
 find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs videoio objdetect highgui dnn)
 
-# 可执行目标；新增源码文件时继续追加到 add_executable 列表
-add_executable(face_recognition src/main.cpp)
+# 自动收集 src 下的所有源文件；新增 .cpp 无需再改这里
+file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS src/*.cpp)
+add_executable(face_recognition ${PROJECT_SOURCES})
 
 target_include_directories(face_recognition PRIVATE src)
 
