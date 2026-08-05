@@ -3,12 +3,12 @@ project(face_recognition CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-# 让 compile_commands.json 直接写出完整 -I 参数，便于 VS Code IntelliSense 识别
+# 关闭 compile_commands.json，避免 VS Code IntelliSense 用它覆盖 includePath
+set(CMAKE_EXPORT_COMPILE_COMMANDS OFF)
 set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES OFF)
 
 # 本机 OpenCV（MinGW x64）安装目录；其他机器可用 -DOpenCV_DIR=... 覆盖
-set(OpenCV_DIR "E:/OpenCV/OpenCV-MinGW-Build-OpenCV-4.1.0-x64")
+set(OpenCV_DIR "E:/OpenCV/OpenCV-MinGW-Build-OpenCV-4.1.0-x64" CACHE PATH "OpenCV build directory")
 
 
 find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs videoio objdetect highgui dnn)

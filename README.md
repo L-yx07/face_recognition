@@ -43,7 +43,7 @@ cmake --build build
 运行前把 OpenCV 的 DLL 加入 `PATH`：
 
 ```powershell
-$env:Path = "E:\opencv\OpenCV-MinGW-Build-OpenCV-4.1.0-x64\x64\mingw\bin;$env:Path"
+$env:Path = "E:\LearningProject\OpenCVLearning\faceRecognition\lib\OpenCV-MinGW-Build-OpenCV-4.1.0-x64\x64\mingw\bin;$env:Path"
 ```
 
 ## 目录结构
